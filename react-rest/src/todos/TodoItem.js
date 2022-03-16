@@ -9,6 +9,7 @@ export function TodoItem({ todo, onTodoDone }) {
       }}
     >
       {todo.title}
+      <button onClick={console.log(todo.title)}>Edit</button>
     </li>
   );
 }

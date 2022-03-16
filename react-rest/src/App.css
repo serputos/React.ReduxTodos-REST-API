@@ -2,11 +2,9 @@
 }
 li.completed {
   text-decoration: line-through;
-  background-color: red;
 }
 li.pending {
   text-decoration: solid;
-  background-color: rgb(9, 255, 0);
 }
 li {
   cursor: pointer;

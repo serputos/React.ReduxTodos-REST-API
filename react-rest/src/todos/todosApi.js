@@ -16,3 +16,10 @@ export async function postUpdateTodo(todo) {
     body: JSON.stringify({ completed: !todo.completed }),
   }).then((response) => response.json());
 }
+
+export async function changeTodo(todo) {
+  return fetch(ENDPOINT + "/" + todo, {
+    method: "POST",
+    body: JSON.stringify({ title: todo.title }),
+  }).then((response) => response.json());
+}
