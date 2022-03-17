@@ -17,9 +17,9 @@ export async function postUpdateTodo(todo) {
   }).then((response) => response.json());
 }
 
-export async function changeTodo(todo) {
-  return fetch(ENDPOINT + "/" + todo, {
+export async function changeTodo(titulo) {
+  return fetch(ENDPOINT, {
     method: "POST",
-    body: JSON.stringify({ title: todo.title }),
+    body: JSON.stringify({ title: titulo.title }),
   }).then((response) => response.json());
 }

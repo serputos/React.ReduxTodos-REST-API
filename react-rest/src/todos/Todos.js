@@ -1,16 +1,9 @@
-import { useEffect, useReducer } from "react";
+import { useEffect } from "react";
 import { AfegirTodo } from "./AfegirTodo";
-import {
-  replaceTodos,
-  addTodo,
-  updateTodo,
-  requestTodos,
-  editTodo,
-} from "./actions";
+import { addTodo, updateTodo, requestTodos, editTodo } from "./actions";
 import { TodoList } from "./TodoList";
 
 import { useDispatch, useSelector } from "react-redux";
-import { EditarTodo } from "./EditarTodo";
 
 function selectTodos(state) {
   return state.reducerTodos;
@@ -39,14 +32,18 @@ export function Todos() {
   const refreshTodo = () => dispatch(requestTodos());
   const onTodoAdded = (todo) => dispatch(addTodo(todo));
   const onTodoUpdated = (updatedTodo) => dispatch(updateTodo(updatedTodo));
-  const onEditTodo = (editedTodo) => dispatch(editTodo(editedTodo));
+  const onTodoEdited = (editedTodo) => dispatch(editTodo(editedTodo));
 
   return (
     <div className="App">
       <h1>LLISTAT TODOS</h1>
       <AfegirTodo onTodoAdded={onTodoAdded} />{" "}
-      <TodoList todos={todos} onTodoDone={onTodoUpdated} />
-      <EditarTodo todos={todos} onEditTodo={onEditTodo} />
+      <TodoList
+        todos={todos}
+        onTodoDone={onTodoUpdated}
+        onTodoEdit={onTodoEdited}
+      />
+      {/* <EditarTodo todos={todos} onEditTodo={onEditTodo} />
       {/*Donat un nou Todo= setTodos == llistat de todos + el nou Todo*/}
       {/*PER VISUALITZAR EL LLISTAT DE TODOS SENCER <pre>{JSON.stringify(todos, null, 2)}</pre>*/}
       <button onClick={refreshTodo}>Refresh</button>

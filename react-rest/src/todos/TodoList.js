@@ -1,6 +1,6 @@
 import { TodoItem } from "./TodoItem";
 
-export function TodoList({ todos, onTodoDone }) {
+export function TodoList({ todos, onTodoDone, onTodoEdit }) {
   return (
     <div>
       <ul>
@@ -12,6 +12,7 @@ export function TodoList({ todos, onTodoDone }) {
             todo={todo}
             //reemplazar aquell que te la ID igual al current
             onTodoDone={onTodoDone}
+            onTodoEdit={onTodoEdit}
           />
         ))}
       </ul>

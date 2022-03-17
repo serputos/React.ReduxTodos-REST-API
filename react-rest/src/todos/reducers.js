@@ -12,7 +12,7 @@ export function reduceTodos(state = initialState, action) {
         currentTodo.id === action.todo.id ? action.todo : currentTodo
       );
     case EDIT_TODO:
-      return state.filter((currentTitle) => currentTitle.id === action.todo.id);
+      return action.todo;
     default:
       return state;
   }
