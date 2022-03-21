@@ -1,40 +1,49 @@
 import { postUpdateTodo, changeTodo } from "./todosApi";
 import { useRef, useState } from "react";
+import "../App.css";
 
 export function TodoItem({ todo, onTodoDone, onTodoEdit }) {
   const tituloMod = useRef();
+  //console.log(todo);
+
+  const [isEdditing, setEdditing] = useState(false);
 
   return (
-    <>
-      <li
-        className={todo.completed ? "completed" : "pending"}
-        onClick={() => {
-          tituloMod.current.value = todo.title;
-        }}
-      >
-        {todo.title}
-      </li>
-      <button
-        onClick={() => {
-          postUpdateTodo(todo).then((json) => onTodoDone(json));
-        }}
-      >
-        X
-      </button>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
+    <div>
+      <div className="llista">
+        {" "}
+        <li
+          className={todo.completed ? "completed" : "pending"}
+          onClick={() => {
+            setEdditing((x) => !x);
+          }}
+        >
+          {todo.title}
+        </li>
+        <input
+          type="checkbox"
+          defaultChecked={todo.completed}
+          onClick={() => {
+            postUpdateTodo(todo).then((json) => onTodoDone(json));
+          }}
+        ></input>
+      </div>
+      {isEdditing && (
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
 
-          const titulo = tituloMod.current.value;
-          todo.title = titulo;
-          changeTodo(titulo).then((json) => onTodoEdit(json));
-          tituloMod.current.value = "";
+            const titulo = tituloMod.current.value;
+            todo.title = titulo;
+            changeTodo(todo).then((json) => onTodoEdit(json));
+            tituloMod.current.value = "";
 
-          // console.log(titulo);
-        }}
-      >
-        <input ref={tituloMod}></input>
-      </form>
-    </>
+            setEdditing(false);
+          }}
+        >
+          <input ref={tituloMod} defaultValue={todo.title}></input>
+        </form>
+      )}
+    </div>
   );
 }

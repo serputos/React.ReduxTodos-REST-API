@@ -17,6 +17,10 @@ export function updateTodo(updatedTodo) {
 }
 
 export const EDIT_TODO = "todos/EDIT_TODO";
-export function editTodo(editedTodo) {
-  return { type: EDIT_TODO, todo: editedTodo };
+export function editTodo(todo) {
+  return { type: EDIT_TODO, todo: todo };
+}
+export const SEARCH_TODO = "SEARCH_TODO";
+export function searchTodo(todo) {
+  return { type: SEARCH_TODO, todo: todo };
 }

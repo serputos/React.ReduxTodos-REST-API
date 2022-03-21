@@ -9,3 +9,7 @@ li.pending {
 li {
   cursor: pointer;
 }
+.llista {
+  display: flex;
+  flex-direction: row;
+}

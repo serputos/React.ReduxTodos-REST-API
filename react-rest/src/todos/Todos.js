@@ -1,6 +1,12 @@
 import { useEffect } from "react";
 import { AfegirTodo } from "./AfegirTodo";
-import { addTodo, updateTodo, requestTodos, editTodo } from "./actions";
+import {
+  addTodo,
+  updateTodo,
+  requestTodos,
+  editTodo,
+  searchTodo,
+} from "./actions";
 import { TodoList } from "./TodoList";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -33,11 +39,12 @@ export function Todos() {
   const onTodoAdded = (todo) => dispatch(addTodo(todo));
   const onTodoUpdated = (updatedTodo) => dispatch(updateTodo(updatedTodo));
   const onTodoEdited = (editedTodo) => dispatch(editTodo(editedTodo));
+  const onTodoSearch = (todo) => dispatch(searchTodo(todo));
 
   return (
     <div className="App">
       <h1>LLISTAT TODOS</h1>
-      <AfegirTodo onTodoAdded={onTodoAdded} />{" "}
+      <AfegirTodo onTodoAdded={onTodoAdded} onTodoSearch={onTodoSearch} />{" "}
       <TodoList
         todos={todos}
         onTodoDone={onTodoUpdated}
