@@ -1,8 +1,8 @@
-import { postUpdateTodo, changeTodo } from "./todosApi";
+import { postUpdateTodo, changeTodo, eliminarTodo } from "./todosApi";
 import { useRef, useState } from "react";
 import "../App.css";
 
-export function TodoItem({ todo, onTodoDone, onTodoEdit }) {
+export function TodoItem({ todo, onTodoDone, onTodoEdit, onTodoDelete }) {
   const tituloMod = useRef();
   //console.log(todo);
 
@@ -27,6 +27,14 @@ export function TodoItem({ todo, onTodoDone, onTodoEdit }) {
             postUpdateTodo(todo).then((json) => onTodoDone(json));
           }}
         ></input>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            eliminarTodo(todo).then((json) => onTodoDelete(json));
+          }}
+        >
+          X
+        </button>
       </div>
       {isEdditing && (
         <form

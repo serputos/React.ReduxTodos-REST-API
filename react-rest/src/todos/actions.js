@@ -20,7 +20,11 @@ export const EDIT_TODO = "todos/EDIT_TODO";
 export function editTodo(todo) {
   return { type: EDIT_TODO, todo: todo };
 }
-export const SEARCH_TODO = "SEARCH_TODO";
-export function searchTodo(todo) {
-  return { type: SEARCH_TODO, todo: todo };
+export const SEARCH_TODO = "todos/SEARCH_TODO";
+export function searchTodo(title) {
+  return { type: SEARCH_TODO, todo: title };
+}
+export const DELETE_TODO = "todos/DELETE_TODO";
+export function deleteTodo(id) {
+  return { type: DELETE_TODO, id };
 }

@@ -1,9 +1,11 @@
-import { useRef } from "react";
-import { postNewTodo, buscarTodo } from "./todosApi";
+import { useRef, useState } from "react";
+import { postNewTodo } from "./todosApi";
 
-export function AfegirTodo({ todo, onTodoAdded, onTodoSearch }) {
+export function AfegirTodo({ onTodoAdded }) {
   const titleRef = useRef();
-  const titleRef2 = useRef();
+  // const [search, setSearch] = useState();
+  //  const titleRef2 = useRef();
+
   return (
     <>
       <form //EVITAR EL RELOAD DE LA PAGINA ONSUBMIT
@@ -22,18 +24,21 @@ export function AfegirTodo({ todo, onTodoAdded, onTodoSearch }) {
         </div>
       </form>
 
-      <form
+      {/*  <form
         onSubmit={(e) => {
           e.preventDefault();
-          onTodoSearch(titleRef.current.value);
-          console.log(titleRef.current.value);
+          // const title2 = titleRef2.current.value;
+          //titleRef2.current.value = "";
+        
+          onTodoSearch(title2);
+          console.log(title2);
         }}
       >
         <div>
-          <input ref={titleRef}></input>
+          <input ref={titleRef2}></input>
           <input type="submit" value="Cerca"></input>
         </div>
-      </form>
+      </form> */}
     </>
   );
 }

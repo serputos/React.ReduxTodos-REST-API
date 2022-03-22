@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import { AfegirTodo } from "./AfegirTodo";
+import { FiltrarTodo } from "./filtrarTodo";
 import {
   addTodo,
   updateTodo,
   requestTodos,
   editTodo,
   searchTodo,
+  deleteTodo,
 } from "./actions";
 import { TodoList } from "./TodoList";
 
@@ -29,7 +31,7 @@ export function Todos() {
     const intervalID = setInterval(() => {
       // sincronitzacio continu loop
       refreshTodo();
-    }, 60000);
+    }, 500);
     return () => clearInterval(intervalID);
   }, []);
 
@@ -40,15 +42,18 @@ export function Todos() {
   const onTodoUpdated = (updatedTodo) => dispatch(updateTodo(updatedTodo));
   const onTodoEdited = (editedTodo) => dispatch(editTodo(editedTodo));
   const onTodoSearch = (todo) => dispatch(searchTodo(todo));
+  const onTodoDeleted = (todo) => dispatch(deleteTodo(todo));
 
   return (
     <div className="App">
       <h1>LLISTAT TODOS</h1>
-      <AfegirTodo onTodoAdded={onTodoAdded} onTodoSearch={onTodoSearch} />{" "}
+      <AfegirTodo onTodoAdded={onTodoAdded} />{" "}
+      <FiltrarTodo onTodoSearch={onTodoSearch} />
       <TodoList
         todos={todos}
         onTodoDone={onTodoUpdated}
         onTodoEdit={onTodoEdited}
+        onTodoDelete={onTodoDeleted}
       />
       {/* <EditarTodo todos={todos} onEditTodo={onEditTodo} />
       {/*Donat un nou Todo= setTodos == llistat de todos + el nou Todo*/}

@@ -23,3 +23,10 @@ export async function changeTodo(titulo) {
     body: JSON.stringify({ title: titulo.title }),
   }).then((response) => response.json());
 }
+
+export async function eliminarTodo(todo) {
+  return fetch(ENDPOINT + "/" + todo.id, {
+    method: "DELETE",
+    body: JSON.stringify({ todo }),
+  }).then((response) => response.json());
+}
