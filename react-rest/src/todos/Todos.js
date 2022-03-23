@@ -31,7 +31,7 @@ export function Todos() {
     const intervalID = setInterval(() => {
       // sincronitzacio continu loop
       refreshTodo();
-    }, 500);
+    }, 60000);
     return () => clearInterval(intervalID);
   }, []);
 
@@ -46,10 +46,11 @@ export function Todos() {
 
   return (
     <div className="App">
-       <header><h1>LISTADO TASCAS</h1></header>
+       <header><h1>LISTADO TAREAS</h1></header>
        <div className="displayApp">  
       <AfegirTodo onTodoAdded={onTodoAdded} />{" "}
       <FiltrarTodo onTodoSearch={onTodoSearch} />
+      <span >("Click" encima de cualquier tarea para editarla)</span >
       <TodoList
         todos={todos}
         onTodoDone={onTodoUpdated}
