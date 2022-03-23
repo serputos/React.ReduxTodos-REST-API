@@ -20,7 +20,7 @@ export function AfegirTodo({ onTodoAdded }) {
       >
         <div>
           <input ref={titleRef}></input>
-          <input type="submit" value="Afegir"></input>
+          <input type="submit" value="Añadir"></input>
         </div>
       </form>
 

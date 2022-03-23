@@ -46,7 +46,8 @@ export function Todos() {
 
   return (
     <div className="App">
-      <h1>LLISTAT TODOS</h1>
+       <header><h1>LISTADO TASCAS</h1></header>
+       <div className="displayApp">  
       <AfegirTodo onTodoAdded={onTodoAdded} />{" "}
       <FiltrarTodo onTodoSearch={onTodoSearch} />
       <TodoList
@@ -59,6 +60,7 @@ export function Todos() {
       {/*Donat un nou Todo= setTodos == llistat de todos + el nou Todo*/}
       {/*PER VISUALITZAR EL LLISTAT DE TODOS SENCER <pre>{JSON.stringify(todos, null, 2)}</pre>*/}
       <button onClick={refreshTodo}>Refresh</button>
+    </div>
     </div>
   );
 }

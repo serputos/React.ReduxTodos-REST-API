@@ -19,7 +19,7 @@ export function FiltrarTodo({ onTodoSearch }) {
       >
         <div>
           <input ref={titleRef2}></input>
-          <input type="submit" value="Cerca"></input>
+          <input type="submit" value="Buscar"></input>
         </div>
       </form>
     </>
