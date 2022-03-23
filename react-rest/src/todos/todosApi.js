@@ -24,9 +24,15 @@ export async function changeTodo(titulo) {
   }).then((response) => response.json());
 }
 
-export async function eliminarTodo(todo) {
+/* export async function eliminarTodo(todo) {
   return fetch(ENDPOINT + "/" + todo.id, {
     method: "DELETE",
     body: JSON.stringify({ todo }),
+  }).then((response) => response.json());
+} */
+export async function eliminarTodo(id) {
+  return fetch(ENDPOINT + "/" + id.id, {
+    method: "DELETE",
+    body: JSON.stringify(id),
   }).then((response) => response.json());
 }

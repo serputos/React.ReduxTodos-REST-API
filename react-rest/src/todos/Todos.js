@@ -46,22 +46,29 @@ export function Todos() {
 
   return (
     <div className="App">
-       <header><h1>LISTADO TAREAS</h1></header>
-       <div className="displayApp">  
-      <AfegirTodo onTodoAdded={onTodoAdded} />{" "}
-      <FiltrarTodo onTodoSearch={onTodoSearch} />
-      <span >("Click" encima de cualquier tarea para editarla)</span >
-      <TodoList
-        todos={todos}
-        onTodoDone={onTodoUpdated}
-        onTodoEdit={onTodoEdited}
-        onTodoDelete={onTodoDeleted}
-      />
-      {/* <EditarTodo todos={todos} onEditTodo={onEditTodo} />
+      <header>
+        <h1>LISTADO TAREAS</h1>
+      </header>
+      <div className="displayApp">
+        <AfegirTodo onTodoAdded={onTodoAdded} />{" "}
+        <FiltrarTodo onTodoSearch={onTodoSearch} />
+        <span>("Click" encima de cualquier tarea para editarla)</span>
+        <TodoList
+          todos={todos}
+          onTodoDone={onTodoUpdated}
+          onTodoEdit={onTodoEdited}
+          onTodoDelete={onTodoDeleted}
+        />
+        {/* <EditarTodo todos={todos} onEditTodo={onEditTodo} />
       {/*Donat un nou Todo= setTodos == llistat de todos + el nou Todo*/}
-      {/*PER VISUALITZAR EL LLISTAT DE TODOS SENCER <pre>{JSON.stringify(todos, null, 2)}</pre>*/}
-      <button onClick={refreshTodo}>Refresh</button>
-    </div>
+        {/*PER VISUALITZAR EL LLISTAT DE TODOS SENCER <pre>{JSON.stringify(todos, null, 2)}</pre>*/}
+        <button
+          className="btn btn-outline-success my-2 my-sm-0"
+          onClick={refreshTodo}
+        >
+          Refresh
+        </button>
+      </div>
     </div>
   );
 }

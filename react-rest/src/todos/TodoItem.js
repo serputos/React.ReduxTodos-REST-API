@@ -4,7 +4,6 @@ import "../App.css";
 
 export function TodoItem({ todo, onTodoDone, onTodoEdit, onTodoDelete }) {
   const tituloMod = useRef();
-  //console.log(todo);
 
   const [isEdditing, setEdditing] = useState(false);
 
@@ -27,14 +26,14 @@ export function TodoItem({ todo, onTodoDone, onTodoEdit, onTodoDelete }) {
             postUpdateTodo(todo).then((json) => onTodoDone(json));
           }}
         ></input>
-        <button
+        <label
           onClick={(e) => {
             e.preventDefault();
             eliminarTodo(todo).then((json) => onTodoDelete(json));
           }}
         >
-          X
-        </button>
+          ❎
+        </label>
       </div>
       {isEdditing && (
         <form

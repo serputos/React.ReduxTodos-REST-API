@@ -27,7 +27,6 @@ export function reduceTodos(state = initialState, action) {
     case SEARCH_TODO:
       return state.filter((item) => item.title === action.todo);
     case DELETE_TODO:
-      //console.log(action.todo);
       return state.filter((item) => item.id !== action.id);
 
     default:

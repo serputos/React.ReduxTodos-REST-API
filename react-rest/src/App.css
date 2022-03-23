@@ -2,7 +2,6 @@
 }
 li.completed {
   text-decoration: line-through;
- 
 }
 li.pending {
   text-decoration: solid;
@@ -13,30 +12,29 @@ li {
 .llista {
   display: flex;
   flex-direction: row;
- 
+  align-items: center;
+  gap: 5px;
+  min-width: 200px;
 }
-#llista{
+#llista {
   background-color: rgb(100, 194, 100);
   border-radius: 15px;
+
   padding: 30px;
-
+  min-width: 200px;
 }
-header{
-  background-color: green;
+header {
+  background-color: rgb(100, 194, 100);
+
   padding: 10px;
- margin-bottom: 20px;
-
- 
+  margin-bottom: 20px;
 }
-header h1{
-  
-
- margin-top: 0;
+header h1 {
+  margin-top: 0;
 }
-.displayApp{
+.displayApp {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap:10px
-
+  gap: 10px;
 }
