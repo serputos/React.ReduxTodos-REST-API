@@ -62,10 +62,11 @@ header h1 {
   letter-spacing: 3px;
 }
 footer {
-  position: absolute;
   background-color: rgb(100, 194, 100);
   padding: 50px;
   width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 
 footer h3 {

@@ -29,7 +29,11 @@ export function reduceTodos(state = initialState, action) {
         ),
       ];
     case SEARCH_TODO:
-      return [...state.filter((item) => item.title === action.todo)];
+      return [
+        ...state.filter((item) => item.title === action.todo),
+      ]; /* state.filter((item) =>
+        item.title.toLowerCase().includes(action.title.toLowerCase())
+      );  */
     case DELETE_TODO:
       return [...state.filter((item) => item.id !== action.id)];
 
