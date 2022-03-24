@@ -2,7 +2,7 @@ import { postUpdateTodo, changeTodo, eliminarTodo } from "./todosApi";
 import { useRef, useState } from "react";
 import "../App.css";
 
-export function TodoItem({ todo, onTodoDone, onTodoEdit, onTodoDelete }) {
+export function TodoItemDone({ todo, onTodoDone, onTodoEdit, onTodoDelete }) {
   const tituloMod = useRef();
 
   const [isEdditing, setEdditing] = useState(false);
@@ -10,7 +10,7 @@ export function TodoItem({ todo, onTodoDone, onTodoEdit, onTodoDelete }) {
 
   return (
     <div>
-      {!todo.completed && (
+      {todo.completed && (
         <div>
           <div className="llista">
             {" "}
