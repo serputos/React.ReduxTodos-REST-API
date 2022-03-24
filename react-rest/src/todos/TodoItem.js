@@ -6,7 +6,6 @@ export function TodoItem({ todo, onTodoDone, onTodoEdit, onTodoDelete }) {
   const tituloMod = useRef();
 
   const [isEdditing, setEdditing] = useState(false);
-  //const [complete, setComplete] = useState(false);
 
   return (
     <div>

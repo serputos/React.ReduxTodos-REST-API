@@ -16,18 +16,22 @@ export function reduceTodos(state = initialState, action) {
     case ADD_TODO:
       return [...state, action.todo];
     case UPDATE_TODO:
-      return state.map((currentTodo) =>
-        currentTodo.id === action.todo.id ? action.todo : currentTodo
-      );
+      return [
+        ...state.map((currentTodo) =>
+          currentTodo.id === action.todo.id ? action.todo : currentTodo
+        ),
+      ];
 
     case EDIT_TODO:
-      return state.map((currentTitle) =>
-        currentTitle.todo === action.todo ? action.todo : currentTitle
-      );
+      return [
+        ...state.map((currentTitle) =>
+          currentTitle.todo === action.todo ? action.todo : currentTitle
+        ),
+      ];
     case SEARCH_TODO:
-      return state.filter((item) => item.title === action.todo);
+      return [...state.filter((item) => item.title === action.todo)];
     case DELETE_TODO:
-      return state.filter((item) => item.id !== action.id);
+      return [...state.filter((item) => item.id !== action.id)];
 
     default:
       return state;

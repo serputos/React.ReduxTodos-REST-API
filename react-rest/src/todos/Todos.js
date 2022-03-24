@@ -56,7 +56,6 @@ export function Todos() {
       </div>
       <footer>
         <h3>Sergi Pruna</h3>
-
         <h3>prunasergi@gmail.com</h3>
       </footer>
     </div>

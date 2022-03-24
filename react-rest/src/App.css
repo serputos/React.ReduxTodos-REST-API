@@ -29,8 +29,9 @@ li {
   max-height: 600px;
 }
 #llista {
-  outline: solid;
+  outline: thick double;
   outline-color: rgb(100, 194, 100);
+  outline-width: 1rem;
   background-color: rgb(164, 226, 164);
   border-radius: 15px;
 
@@ -39,7 +40,8 @@ li {
   overflow-x: auto;
 }
 #llistaComplete {
-  outline: solid;
+  outline: thick double;
+  outline-width: 1rem;
   outline-color: rgb(221, 84, 91);
   background-color: rgb(223, 142, 146);
   border-radius: 15px;
@@ -64,7 +66,6 @@ footer {
   background-color: rgb(100, 194, 100);
   padding: 50px;
   width: 100%;
-  bottom: 0px;
 }
 
 footer h3 {
