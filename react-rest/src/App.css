@@ -1,4 +1,6 @@
 .App {
+  display: flex;
+  flex-direction: column;
 }
 li.completed {
   text-decoration: line-through;
@@ -27,6 +29,7 @@ li {
   gap: 100px;
   margin: 50px;
   max-height: 600px;
+  min-height: 400px;
 }
 #llista {
   outline: thick double;
@@ -65,7 +68,7 @@ footer {
   background-color: rgb(100, 194, 100);
   padding: 30px;
   width: 100%;
-  
+  position: relative;
   bottom: 0%;
 }
 
