@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { AfegirTodo } from "./AfegirTodo";
 import { FiltrarTodo } from "./filtrarTodo";
 import {
-  addTodo,
-  updateTodo,
+  requestAddTodo,
+  requestUpdateTodo,
   requestTodos,
   editTodo,
   searchTodo,
@@ -12,17 +12,14 @@ import {
 import { TodoList } from "./TodoList";
 
 import { useDispatch, useSelector } from "react-redux";
-
-function selectTodos(state) {
-  return state.reducerTodos;
-}
+import { selectTodos } from "./selectors";
 
 export function Todos() {
   const { dispatch, todos } = useEffectFunction();
 
   const refreshTodo = () => dispatch(requestTodos());
-  const onTodoAdded = (todo) => dispatch(addTodo(todo));
-  const onTodoUpdated = (updatedTodo) => dispatch(updateTodo(updatedTodo));
+  const onAddTodo = (todo) => dispatch(requestAddTodo(todo));
+  const onTodoUpdate = (updatedTodo) => dispatch(requestUpdateTodo(updatedTodo));
   const onTodoEdited = (editedTodo) => dispatch(editTodo(editedTodo));
   const onTodoSearch = (todo) => dispatch(searchTodo(todo));
   const onTodoDeleted = (todo) => dispatch(deleteTodo(todo));
@@ -33,7 +30,7 @@ export function Todos() {
         <h1>LISTADO TAREAS</h1>
       </header>
       <div className="displayApp">
-        <AfegirTodo onTodoAdded={onTodoAdded} />{" "}
+        <AfegirTodo onAddTodo={onAddTodo} />{" "}
         <FiltrarTodo onTodoSearch={onTodoSearch} />
         <span className="descripcionText">
           ("Click" encima de cualquier tarea para editarla)
@@ -46,7 +43,8 @@ export function Todos() {
         </button>
         <TodoList
           todos={todos}
-          onTodoDone={onTodoUpdated}
+          
+          onTodoUpdate={onTodoUpdate}
           onTodoEdit={onTodoEdited}
           onTodoDelete={onTodoDeleted}
         />

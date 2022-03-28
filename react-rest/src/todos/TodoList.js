@@ -1,7 +1,7 @@
 import { TodoItem } from "./TodoItem";
 import { TodoItemDone } from "./TodoItemDone";
 
-export function TodoList({ todos, onTodoDone, onTodoEdit, onTodoDelete }) {
+export function TodoList({ todos, onTodoDone, onTodoEdit, onTodoDelete, onTodoUpdate }) {
   return (
     <div className="listas">
       <ul id="llista">
@@ -12,7 +12,8 @@ export function TodoList({ todos, onTodoDone, onTodoEdit, onTodoDelete }) {
             key={todo.id}
             todo={todo}
             //reemplazar aquell que te la ID igual al current
-            onTodoDone={onTodoDone}
+           // onTodoDone={onTodoDone}
+           onTodoUpdate={onTodoUpdate}
             onTodoEdit={onTodoEdit}
             onTodoDelete={onTodoDelete}
           />
@@ -23,9 +24,9 @@ export function TodoList({ todos, onTodoDone, onTodoEdit, onTodoDelete }) {
         {/* >Donat un llistat de todos, retorna un li amb el titol del todo, segons la seva id */}
         {todos.map((todo) => (
           <TodoItemDone
-            key={todo.completed}
+            key={todo.id}
             todo={todo}
-            onTodoDone={onTodoDone}
+            onTodoUpdate={onTodoUpdate}
             onTodoEdit={onTodoEdit}
             onTodoDelete={onTodoDelete}
           />

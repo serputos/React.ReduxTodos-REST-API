@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { postNewTodo } from "./todosApi";
 
-export function AfegirTodo({ onTodoAdded }) {
+export function AfegirTodo({onAddTodo, }) {
   const titleRef = useRef();
   // const [search, setSearch] = useState();
   //  const titleRef2 = useRef();
@@ -24,7 +24,7 @@ export function AfegirTodo({ onTodoAdded }) {
         </div>
       </form> */}
 
-      <nav class="navbar navbar-light bg-light">
+      <nav className="navbar navbar-light bg-light">
         <form
           className="form-inline"
           onSubmit={(e) => {
@@ -33,7 +33,8 @@ export function AfegirTodo({ onTodoAdded }) {
 
             titleRef.current.value = ""; // borrar value despues de coger le primero
 
-            postNewTodo(title).then((json) => onTodoAdded(json)); //valor final; // OnSubmit --> Post  un nou TODO amb titol del input
+            //postNewTodo(title).then((json) => onTodoAdded(json)); //valor final; // OnSubmit --> Post  un nou TODO amb titol del input
+            onAddTodo({title});
           }}
         >
           <div>

@@ -2,7 +2,7 @@ import { postUpdateTodo, changeTodo, eliminarTodo } from "./todosApi";
 import { useRef, useState } from "react";
 import "../App.css";
 
-export function TodoItemDone({ todo, onTodoDone, onTodoEdit, onTodoDelete }) {
+export function TodoItemDone({ todo, onTodoDone, onTodoEdit, onTodoDelete, onTodoUpdate }) {
   const tituloMod = useRef();
 
   const [isEdditing, setEdditing] = useState(false);
@@ -27,7 +27,8 @@ export function TodoItemDone({ todo, onTodoDone, onTodoEdit, onTodoDelete }) {
               type="checkbox"
               defaultChecked={todo.completed}
               onClick={() => {
-                postUpdateTodo(todo).then((json) => onTodoDone(json));
+                /* postUpdateTodo(todo).then((json) => onTodoDone(json)); */
+                onTodoUpdate({...todo, completed: !todo.completed })
               }}
             ></input>
             <label
