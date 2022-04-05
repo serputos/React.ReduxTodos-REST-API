@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { postNewTodo } from "./todosApi";
 
-export function AfegirTodo({onAddTodo, }) {
+export function AfegirTodo({ onAddTodo }) {
   const titleRef = useRef();
   // const [search, setSearch] = useState();
   //  const titleRef2 = useRef();
@@ -34,7 +34,7 @@ export function AfegirTodo({onAddTodo, }) {
             titleRef.current.value = ""; // borrar value despues de coger le primero
 
             //postNewTodo(title).then((json) => onTodoAdded(json)); //valor final; // OnSubmit --> Post  un nou TODO amb titol del input
-            onAddTodo({title});
+            onAddTodo({ title });
           }}
         >
           <div>

@@ -19,7 +19,8 @@ export function Todos() {
 
   const refreshTodo = () => dispatch(requestTodos());
   const onAddTodo = (todo) => dispatch(requestAddTodo(todo));
-  const onTodoUpdate = (updatedTodo) => dispatch(requestUpdateTodo(updatedTodo));
+  const onTodoUpdate = (updatedTodo) =>
+    dispatch(requestUpdateTodo(updatedTodo));
   const onTodoEdited = (editedTodo) => dispatch(editTodo(editedTodo));
   const onTodoSearch = (todo) => dispatch(searchTodo(todo));
   const onTodoDeleted = (todo) => dispatch(deleteTodo(todo));
@@ -43,7 +44,6 @@ export function Todos() {
         </button>
         <TodoList
           todos={todos}
-          
           onTodoUpdate={onTodoUpdate}
           onTodoEdit={onTodoEdited}
           onTodoDelete={onTodoDeleted}

@@ -25,7 +25,6 @@ export function requestUpdateTodo(updatedTodo) {
   return { type: REQUEST_UPDATE_TODO, todo: updatedTodo };
 }
 
-
 export const EDIT_TODO = "todos/EDIT_TODO";
 export function editTodo(todo) {
   return { type: EDIT_TODO, todo };

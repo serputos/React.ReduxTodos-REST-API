@@ -31,7 +31,6 @@ export async function postUpdateTodo(todo) {
   }).then((response) => response.json());
 }
 
-
 export async function changeTodo(titulo) {
   return fetch(ENDPOINT + "/" + titulo.id, {
     method: "POST",
@@ -48,6 +47,6 @@ export async function changeTodo(titulo) {
 export async function eliminarTodo(id) {
   return fetch(ENDPOINT + "/" + id.id, {
     method: "DELETE",
-    body: JSON.stringify(id),
+    // body: JSON.stringify(id),
   }).then((response) => response.json());
 }
