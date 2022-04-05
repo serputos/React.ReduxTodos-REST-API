@@ -52,6 +52,7 @@ export function Todos() {
       {/*Donat un nou Todo= setTodos == llistat de todos + el nou Todo*/}
         {/*PER VISUALITZAR EL LLISTAT DE TODOS SENCER <pre>{JSON.stringify(todos, null, 2)}</pre>*/}
       </div>
+
       <footer>
         <h3>Sergi Pruna</h3>
         <h3>prunasergi@gmail.com</h3>

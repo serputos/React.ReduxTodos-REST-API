@@ -44,6 +44,7 @@ li {
   padding: 30px;
   min-width: 300px;
   overflow-x: auto;
+  margin: 20px;
 }
 #llistaComplete {
   outline: thick double;
@@ -55,6 +56,7 @@ li {
   padding: 30px;
   min-width: 300px;
   overflow-x: auto;
+  margin: 20px;
 }
 header {
   background-color: rgb(100, 194, 100);
@@ -72,8 +74,9 @@ footer {
   background-color: rgb(100, 194, 100);
   padding: 30px;
 
-  position: relative;
-  bottom: 0%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   flex-direction: column;
   align-items: center;
 }
