@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/React.ReduxTodos-REST-API/static/css/main.5ae64897.css",
-    "main.js": "/React.ReduxTodos-REST-API/static/js/main.29370b30.js",
+    "main.css": "/React.ReduxTodos-REST-API/static/css/main.cecabf33.css",
+    "main.js": "/React.ReduxTodos-REST-API/static/js/main.97bf3cc7.js",
     "static/js/787.e1ba0af3.chunk.js": "/React.ReduxTodos-REST-API/static/js/787.e1ba0af3.chunk.js",
     "index.html": "/React.ReduxTodos-REST-API/index.html",
-    "main.5ae64897.css.map": "/React.ReduxTodos-REST-API/static/css/main.5ae64897.css.map",
-    "main.29370b30.js.map": "/React.ReduxTodos-REST-API/static/js/main.29370b30.js.map",
+    "main.cecabf33.css.map": "/React.ReduxTodos-REST-API/static/css/main.cecabf33.css.map",
+    "main.97bf3cc7.js.map": "/React.ReduxTodos-REST-API/static/js/main.97bf3cc7.js.map",
     "787.e1ba0af3.chunk.js.map": "/React.ReduxTodos-REST-API/static/js/787.e1ba0af3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5ae64897.css",
-    "static/js/main.29370b30.js"
+    "static/css/main.cecabf33.css",
+    "static/js/main.97bf3cc7.js"
   ]
 }
